@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slicknav.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet"
+          type="text/css"/>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <title>Train Tracker</title>
+</head>
+<body>
+
+<ul id="menu" style="display: none">
+    <li><a class="scroll" href="#features">Find Nearest Station</a></li>
+    <li><a class="scroll" href="#usage">Find Train</a></li>
+    <li><a class="scroll" href="#usage">Favourites</a></li>
+    <li><a class="scroll" href="#examples">Help</a></li>
+    <li><a class="scroll" href="#examples">News</a></li>
+    <li><a href="">About Train Tracker</a></li>
+</ul>
+
+<div data-role="page" class="demo-wrapper" id="start-page" data-theme="a">
+    <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-02">
+        <ul data-role="listview">
+            <li class="home"><a href="#start-page" title="Home">Home</a></li>
+            <li class="newsfeed"><a href="#list" title="News">News Feed</a></li>
+            <li class="profile"><a href="#find-station" title="Station">Find Station</a></li>
+            <li class="setting"><a href="#get-train" title="Train">Get Train</a></li>
+            <li class="logout"><a href="#help" title="Help">Help</a></li>
+            <li class="report"><a href="#quit" title="Quit">Quit</a></li>
+        </ul>
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-02" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+
+    <div data-role="content">
+
+        <div role="main" class="ui-content">
+            <div class="ui-grid-b ui-responsive"> <!-- menu-container -->
+
+                <!-- FIRST ROW -->
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar-a">
+                        <div class="menu-elem"><a href="#">
+                            <div class="menu-img"><img src="img/logo.png"></div>
+                            <div class="menu-text"> Elem 3.1</div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar-a">
+                        <div class="menu-elem"><a href="#">
+                            <div class="menu-img"><img src="img/logo.png"></div>
+                            <div class="menu-text"> Elem 3.1</div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar-a">
+                        <div class="menu-elem"><a href="#">
+                            <div class="menu-img"><img src="img/logo.png"></div>
+                            <div class="menu-text"> Elem 3.1</div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div id="deviceready" class="blink">-->
+        <!--<p class="event listening">Connecting to Device</p>-->
+
+        <!--<p class="event received">Device is Ready</p>-->
+        <!--</div>-->
+    </div>
+
+</div>
+
+<div data-role="page" class="demo-wrapper" id="find-station" data-theme="a">
+    <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-03">
+        <ul data-role="listview">
+            <li class="home"><a href="#start-page" title="Home">Home</a></li>
+            <li class="newsfeed"><a href="#list" title="News">News Feed</a></li>
+            <li class="profile"><a href="#find-station" title="Station">Find Station</a></li>
+            <li class="setting"><a href="#get-train" title="Train">Get Train</a></li>
+            <li class="logout"><a href="#help" title="Help">Help</a></li>
+            <li class="report"><a href="#quit" title="Quit">Quit</a></li>
+        </ul>
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-03" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+    <div data-role="content">
+        <div id="map" style="height: 300px; "></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/rss.js"></script>
+
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('#menu').slicknav();
+
+        var lat, lon, map;
+
+        navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoSuccess);
+
+        //alert("something")
+        function onGeoSuccess(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            var currentposition = new google.maps.LatLng(lat, lon);
+
+            var mapoptions = {
+                zoom: 12,
+                center: currentposition,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), mapoptions);
+
+
+            var marker = new google.maps.Marker({
+                position: currentposition,
+                map: map
+            });
+        }
+
+        function onGeoError(error) {
+            if (error == 1) {
+                alert('turn on geolocation');
+            }
+        }
+
+        google.maps.event.addListenerOnce(map, 'idle', function () {
+            google.maps.event.trigger(map, 'resize');
+        });
+        //google.maps.event.trigger(map, 'resize');
+    });
+
+
+</script>
+
+
+</html>
