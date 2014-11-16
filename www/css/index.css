@@ -20,6 +20,10 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+.ui-page {
+    -webkit-backface-visibility: hidden;
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -112,52 +116,4 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
-}
-
-
-.ui-grid-b {
-    padding: 0;
-    margin: 0;
-    margin-top: 15px;
-    height: 380px;
-}
-.ui-block-a, .ui-block-b .ui-block-c{
-    padding: 0;
-    margin: 0;
-    height: 33.3%;
-}
-.ui-block-a a, .ui-block-b a .ui-block-c a {
-    width: 50%;
-}
-.ui-bar-a, .ui-bar {
-    margin: 0 auto;
-    padding: 0;
-    height: 90%;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    /* Gradient set-up */
-    background: -webkit-linear-gradient(#ddfaff, white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#ddfaff, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#ddfaff, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#ddfaff, white); /* Standard syntax (must be last) */
-    /* Border set-up */
-    border: 1px solid white;
-    border-radius: 5px;
-    box-shadow: 2px 5px 5px #000;
-    display: table;
-}
-.menu-elem {
-    margin: 0;
-    display: table-cell;
-    vertical-align: middle;
-}
-.menu-elem a {
-    text-decoration: none;
-}
-.menu-elem .menu-text {
-    margin-top: 5px;
-    font-size: 0.9em;
-    text-shadow: 1px 2px #FFF;
-    color: #333;
 }

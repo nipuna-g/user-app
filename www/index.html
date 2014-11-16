@@ -32,32 +32,27 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
     <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet"
           type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
+
+
     <title>Train Tracker</title>
 </head>
 <body>
-
-<ul id="menu" style="display: none">
-    <li><a class="scroll" href="#features">Find Nearest Station</a></li>
-    <li><a class="scroll" href="#usage">Find Train</a></li>
-    <li><a class="scroll" href="#usage">Favourites</a></li>
-    <li><a class="scroll" href="#examples">Help</a></li>
-    <li><a class="scroll" href="#examples">News</a></li>
-    <li><a href="">About Train Tracker</a></li>
-</ul>
-
-<div data-role="page" class="demo-wrapper" id="start-page" data-theme="a">
-    <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-02">
+<div data-role="page" class="demo-wrapper ui-page" id="start-page" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-02">
         <ul data-role="listview">
-            <li class="home"><a href="#start-page" title="Home">Home</a></li>
-            <li class="newsfeed"><a href="#list" title="News">News Feed</a></li>
-            <li class="profile"><a href="#find-station" title="Station">Find Station</a></li>
-            <li class="setting"><a href="#get-train" title="Train">Get Train</a></li>
-            <li class="logout"><a href="#help" title="Help">Help</a></li>
-            <li class="report"><a href="#quit" title="Quit">Quit</a></li>
+            <!--<li class="home"><a href="#start-page" title="Home">Home</a></li>-->
+            <!--<li class="newsfeed"><a href="#list" title="News">News Feed</a></li>-->
+            <!--<li class="profile"><a href="#find-station" title="Station">Find Station</a></li>-->
+            <!--<li class="setting"><a href="#get-train" title="Train">Get Train</a></li>-->
+            <!--<li class="logout"><a href="#help" title="Help">Help</a></li>-->
+            <!--<li class="report"><a href="#quit" title="Quit">Quit</a></li>-->
         </ul>
     </div>
 
@@ -71,60 +66,31 @@
         <h1 class="ui-title" role="heading">Train Tracker</h1>
     </div>
 
-    <div data-role="content">
+    <div data-role="content" class="ui-content" id="start-wrapper">
+        <ul data-role="listview" data-inset="true" style="margin-top: 300px; bottom: -20px; " data-theme="b">
+            <li class="profile"><a href="#find-station" title="Station">Find Station</a></li>
+            <li class="setting"><a href="#get-train" title="Train">Get Train</a></li>
+            <li class="timetable"><a href="#timetable" title="TimeTable">Time Table</a></li>
+            <li class="newsfeed"><a href="#list" title="News">News Feed</a></li>
+            <li class="logout"><a href="#help" title="Help">Help</a></li>
+            <li class="report"><a href="#quit" title="Quit">Quit</a></li>
+        </ul>
 
-        <div role="main" class="ui-content">
-            <div class="ui-grid-b ui-responsive"> <!-- menu-container -->
+        <!--<div class="app">-->
 
-                <!-- FIRST ROW -->
-                <div class="ui-block-a">
-                    <div class="ui-bar ui-bar-a">
-                        <div class="menu-elem"><a href="#">
-                            <div class="menu-img"><img src="img/logo.png"></div>
-                            <div class="menu-text"> Elem 3.1</div>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-block-b">
-                    <div class="ui-bar ui-bar-a">
-                        <div class="menu-elem"><a href="#">
-                            <div class="menu-img"><img src="img/logo.png"></div>
-                            <div class="menu-text"> Elem 3.1</div>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-block-c">
-                    <div class="ui-bar ui-bar-a">
-                        <div class="menu-elem"><a href="#">
-                            <div class="menu-img"><img src="img/logo.png"></div>
-                            <div class="menu-text"> Elem 3.1</div>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--<h1>PhoneGap</h1>-->
+
         <!--<div id="deviceready" class="blink">-->
         <!--<p class="event listening">Connecting to Device</p>-->
 
         <!--<p class="event received">Device is Ready</p>-->
         <!--</div>-->
+        <!--</div>-->
     </div>
-
 </div>
 
-<div data-role="page" class="demo-wrapper" id="find-station" data-theme="a">
-    <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-03">
-        <ul data-role="listview">
-            <li class="home"><a href="#start-page" title="Home">Home</a></li>
-            <li class="newsfeed"><a href="#list" title="News">News Feed</a></li>
-            <li class="profile"><a href="#find-station" title="Station">Find Station</a></li>
-            <li class="setting"><a href="#get-train" title="Train">Get Train</a></li>
-            <li class="logout"><a href="#help" title="Help">Help</a></li>
-            <li class="report"><a href="#quit" title="Quit">Quit</a></li>
-        </ul>
+<div data-role="page" class="demo-wrapper" id="find-station" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-03">
     </div>
 
     <div data-role="header">
@@ -137,13 +103,98 @@
         <h1 class="ui-title" role="heading">Train Tracker</h1>
     </div>
     <div data-role="content">
-        <div id="map" style="height: 300px; "></div>
+        <div id="map-container" style="height: 400px; width:100%;">
+            <div id="map" style="height: 100%"></div>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" class="demo-wrapper" id="find-station" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-03">
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-03" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+    <div data-role="content">
+        <div id="map-container" style="height: 400px; width:100%;">
+            <div id="map" style="height: 100%"></div>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" class="demo-wrapper" id="timetable" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-04">
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-04" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+
+    <div data-role="content">
+        <form id="get-timetable">
+            <select id="start-staion"></select>
+
+            <select id="end-station"></select>
+
+            <input type="submit" data-role="button">Find Trains</button>
+        </form>
+    </div>
+</div>
+
+<div data-role="page" class="demo-wrapper" id="get-train" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-03">
+        <!--<ul data-role="listview">-->
+        <!--<li class="home"><a href="#start-page" title="Home">Home</a></li>-->
+        <!--<li class="newsfeed"><a href="#list" title="News">News Feed</a></li>-->
+        <!--<li class="profile"><a href="#find-station" title="Station">Find Station</a></li>-->
+        <!--<li class="setting"><a href="#get-train" title="Train">Get Train</a></li>-->
+        <!--<li class="logout"><a href="#help" title="Help">Help</a></li>-->
+        <!--<li class="report"><a href="#quit" title="Quit">Quit</a></li>-->
+        <!--</ul>-->
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-03" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+    <div data-role="content">
+        <label for="select-choice-0" class="select">Start Station:</label>
+        <select name="select-choice-0" id="select-start">
+
+        </select>
+
+        <label for="select-choice-0" class="select">End Station:</label>
+        <select name="select-choice-0" id="select-end">
+
+        </select>
+
+        <button>Find Trains</button>
     </div>
 </div>
 
 <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/push.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/rss.js"></script>
+
 
 <script type="text/javascript">
     app.initialize();
@@ -151,14 +202,54 @@
 </body>
 
 <script>
+    $('#get-timetable').submit(function () {
+        alert("something")
+
+        url="http://railway.lankagate.gov.lk/train/searchTrain&jsoncallback=?";
+        $.ajax({
+            url: url,
+            jsonp : true,
+            jsonpCallback: 'jsonCallback',
+            // contentType: 'application/json', -- you can't set content type for a <script> tag, this option does nothing for jsonp | KevinB
+            cache: 'true',
+            dataType : 'jsonp'
+        });
+
+//        $.get('http://railway.lankagate.gov.lk/train/searchTrain&jsoncallback=success?', {
+//            startStationID: '26',
+//            endStationID: '61',
+//            searchDate: '2014-11-15',
+//            startTime: '00:00:00',
+//            endTime: '23:59:59',
+//            lang: 'en'
+//        }, function (response) {
+//            alert(response);
+//        }, 'jsonp');
+
+        event.preventDefault();
+
+    });
+
     $(document).ready(function () {
         $('#menu').slicknav();
+        $.get('left-panel.html', {}, function (response) {
+            $('.leftpanel').append(response);
+        });
 
-        var lat, lon, map;
+        $.get('station-list.html', {}, function (response) {
+            //alert(response)
+            $('#start-station').append(response);
+            $('#end-station').append(response);
+        });
+
+    });
+
+    var lat, lon, map;
+
+    function loadMap() {
 
         navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoSuccess);
 
-        //alert("something")
         function onGeoSuccess(position) {
             lat = position.coords.latitude;
             lon = position.coords.longitude;
@@ -172,11 +263,14 @@
 
             map = new google.maps.Map(document.getElementById("map"), mapoptions);
 
-
             var marker = new google.maps.Marker({
                 position: currentposition,
-                map: map
+                map: map,
+                icon: 'img/marker.png'
             });
+
+            google.maps.event.trigger(map, 'resize');
+            map.setCenter(currentposition);
         }
 
         function onGeoError(error) {
@@ -184,14 +278,52 @@
                 alert('turn on geolocation');
             }
         }
+    }
+    $(document).on("pageshow", "#get-train", function (event) {
+        //alert("get train");
+        $.get("http://nipuna.me/train-admin/php/get-prev-station.php", function (data) {
+            alert(data);
+            $('#select-start').append(data);
+            $('#select-end').append(data);
 
-        google.maps.event.addListenerOnce(map, 'idle', function () {
-            google.maps.event.trigger(map, 'resize');
         });
-        //google.maps.event.trigger(map, 'resize');
     });
 
+    $(document).on("pageshow", "#find-station", function (event) {
+        loadMap()
 
+        $.get("http://nipuna.me/train-admin/php/getstations.json.php", function (data) {
+            //$( ".result" ).html( data );
+            var stations = jQuery.parseJSON(data);
+            alert(data);
+            $.each(stations, function (index, station) {
+                //alert( stations[index].station_name);
+                //alert(station.station_name);
+
+                var myLatlng = new google.maps.LatLng(station.station_lat, station.station_lon);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: station.station_name
+                });
+
+                var contentString = '<div style="width: 250px;color: rgba(3, 0, 74, 0.99);font-size:20px;font-family:Arial, Helvetica, sans-serif;">' + station.station_name + '<br/>' + station.station_lat + '<br/>' + station.station_lon + '<br/>' + station.station_prev + '</div>';
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    //infowindow.close(map,markerPrev);
+                    infowindow.open(map, marker);
+                    markerPrev = marker;
+                });
+
+            });
+
+        });
+
+
+    });
 </script>
 
 

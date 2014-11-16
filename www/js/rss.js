@@ -4,7 +4,7 @@
 var maxLength = 20;
 /* writing HTML */
 document.write(
-    '<div data-role="page" id="list">' +
+    '<div data-theme="b" data-role="page" id="list">' +
 
     '<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">'+
     '<ul data-role="listview">'+
@@ -25,7 +25,7 @@ document.write(
     '    <h1><span id="widgetTitle">...</span> ' +
     '      <span style="font-size: x-small">(HTML)</span></h1>' +
     '  </div>' +
-    '  <div data-role="content">' +
+    '  <div data-role="content"  data-theme="b" >' +
     '    <ul data-role="listview" data-filter="true" id="articleList">'
 );
 for(var i=1; i<=maxLength; i++){
@@ -40,9 +40,9 @@ document.write(
 );
 for(i=1; i<=maxLength; i++){
     document.write(
-        '<div data-role="page" id="article' + i + '">' +
+        '<div data-role="page" data-theme="b" id="article' + i + '">' +
         //<div data-role="header">
-        //    <a href="#panel-01" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+        //    <a href="#panel-01" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
         //    <h1 class="ui-title" role="heading">Train Tracker</h1>
         //</div>
 
@@ -64,7 +64,7 @@ for(i=1; i<=maxLength; i++){
         '    <a href="#list" id="openButton' + i + '" data-role="button" data-icon="plus"' +
         '      class="ui-btn-right" rel="external">Open</a>' +
         '  </div>' +
-        '  <div data-role="content">' +
+        '  <div data-role="content" data-theme="b">' +
         '    <div id="articleContent' + i + '" class="articleContent"></div>' +
         '    <div data-role="controlgroup" data-type="horizontal">' +
         '      <a href="#article' + String(i-1) + '" data-role="button" data-icon="arrow-l"' +
