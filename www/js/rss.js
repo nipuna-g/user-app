@@ -6,7 +6,7 @@ var maxLength = 20;
 document.write(
     '<div data-theme="b" data-role="page" id="list">' +
 
-    '<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">'+
+    '<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-05">'+
     '<ul data-role="listview">'+
     '<li class="newsfeed"><a href="#start-page" title="Home">Home</a></li>'+
     '<li class="newsfeed"><a href="#list" title="News">News Feed</a></li>'+
@@ -20,7 +20,7 @@ document.write(
 
 
     '  <div data-role="header" data-position="fixed">' +
-    '<a href="#panel-01" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>' +
+    '<a href="#panel-05" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>' +
 
     '    <h1><span id="widgetTitle">...</span> ' +
     '      <span style="font-size: x-small">(HTML)</span></h1>' +
@@ -46,7 +46,7 @@ for(i=1; i<=maxLength; i++){
         //    <h1 class="ui-title" role="heading">Train Tracker</h1>
         //</div>
 
-        '<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">'+
+        '<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-06">'+
         '<ul data-role="listview">'+
         '<li class="newsfeed"><a href="#start-page" title="Home">Home</a></li>'+
         '<li class="newsfeed"><a href="#list" title="News">News Feed</a></li>'+
@@ -59,7 +59,7 @@ for(i=1; i<=maxLength; i++){
 
 
         '  <div data-role="header" data-position="inline">' +
-        '    <a href="#panel-01" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>' +
+        '    <a href="#panel-06" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>' +
         '    <h1 id="articleHeader' + i + '">&nbsp;</h1>' +
         '    <a href="#list" id="openButton' + i + '" data-role="button" data-icon="plus"' +
         '      class="ui-btn-right" rel="external">Open</a>' +
