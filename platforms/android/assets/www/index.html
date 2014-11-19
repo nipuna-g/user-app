@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slicknav.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+
+
+    <title>Train Tracker</title>
+</head>
+<body>
+<div data-role="page" id="start-page" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-01">
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-01" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+
+    <div data-role="content" id="start-wrapper">
+        <ul data-role="listview" data-inset="false"
+            style="bottom:15px; position:absolute !important; top: auto !important; width:100%; " data-theme="b">
+            <li class="profile"><a href="#find-station" title="Station">Find Station</a></li>
+            <li class="setting"><a href="#get-train" title="Train">Get Train</a></li>
+            <li class="timetable"><a href="#timetable" title="TimeTable">Time Table</a></li>
+            <li class="newsfeed"><a href="#list" title="News">News Feed</a></li>
+            <li class="logout"><a href="#help" title="Help">Help</a></li>
+            <li class="report"><a href="#quit" id="quit" title="Quit">Quit</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<div data-role="page" class="demo-wrapper" id="find-station" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-02">
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-02" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+    <div data-role="content">
+        <div id="map-container" style="height: 400px; width:100%;">
+            <div id="map" style="height: 100%"></div>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" class="demo-wrapper" id="timetable" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-03">
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-03" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+
+    <div data-role="content">
+        <form id="get-timetable">
+            <select id="start-staion"></select>
+
+            <select id="end-station"></select>
+
+            <input type="submit" data-role="button">Find Trains</button>
+        </form>
+    </div>
+</div>
+
+<div data-role="page" class="demo-wrapper" id="get-train" data-theme="b">
+    <div class="panel left leftpanel" data-role="panel" data-position="left" data-display="push" id="panel-04">
+    </div>
+
+    <div data-role="header">
+        <a href="#panel-04" data-icon="bars" data-iconpos="notext"
+           class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true"
+           data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span
+                class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span
+                class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+
+        <h1 class="ui-title" role="heading">Train Tracker</h1>
+    </div>
+    <div data-role="content">
+        <label for="select-choice-0" class="select">Start Station:</label>
+        <select name="select-choice-0" id="select-start">
+
+        </select>
+
+        <label for="select-choice-0" class="select">End Station:</label>
+        <select name="select-choice-0" id="select-end">
+
+        </select>
+
+        <button>Find Trains</button>
+    </div>
+    <ul id="station-list">
+
+    </ul>
+</div>
+
+<script type="text/javascript" src="js/socket.io.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/push.js"></script>
+
+<script id="mapMarker" type="text/template">
+    <div style="width: 250px;color: rgba(3, 0, 74, 0.99);font-size:20px;font-family:Arial, Helvetica, sans-serif;">
+        {{station_id}} - {{station_name}}</br>
+        Latitude: {{station_lat}} </br>
+        Longitude: {{station_lon}}</br>
+        <a href="/{{station_id}}">Find Trains</a>
+    </div>
+</script>
+
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/rss.js"></script>
+
+
+<script>
+    var socket = io.connect('http://nipuna.me:8080');
+    socket.emit('trainAlert', "Train Alert!!!");
+</script>
+
+
+<script type="text/javascript">
+    app.initialize();
+</script>
+</body>
+
+<script>
+    $("#quit").click(function () {
+        navigator.app.exitApp();
+    });
+
+    $('#get-timetable').submit(function () {
+        url = "http://railway.lankagate.gov.lk/train/searchTrain&jsoncallback=?";
+        $.ajax({
+            url: url,
+            jsonp: true,
+            jsonpCallback: 'jsonCallback',
+            // contentType: 'application/json', -- you can't set content type for a <script> tag, this option does nothing for jsonp | KevinB
+            cache: 'true',
+            dataType: 'jsonp'
+        });
+
+//        $.get('http://railway.lankagate.gov.lk/train/searchTrain&jsoncallback=success?', {
+//            startStationID: '26',
+//            endStationID: '61',
+//            searchDate: '2014-11-15',
+//            startTime: '00:00:00',
+//            endTime: '23:59:59',
+//            lang: 'en'
+//        }, function (response) {
+//            alert(response);
+//        }, 'jsonp');
+
+        event.preventDefault();
+
+    });
+
+    $(document).ready(function () {
+        $('#menu').slicknav();
+        $.get('left-panel.html', {}, function (response) {
+            $('.leftpanel').append(response);
+        });
+
+        $.get('station-list.html', {}, function (response) {
+            //alert(response)
+            $('#start-station').append(response);
+            $('#end-station').append(response);
+        });
+
+    });
+
+
+    $(document).on("pageshow", "#get-train", function (event) {
+        //alert("get train");
+        $.get("http://nipuna.me/train-admin/php/get-prev-station.php", function (data) {
+            alert(data);
+            $('#select-start').append(data);
+            $('#select-end').append(data);
+
+        });
+    });
+
+    $(document).on("pageshow", "#find-station", function (event) {
+        initMap();
+
+    });
+</script>
+
+
+</html>

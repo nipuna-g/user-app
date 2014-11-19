@@ -1,0 +1,21 @@
+.ui-panel-wrapper {
+    background: #000000;
+}
+
+#start-wrapper {
+    background: url("../img/background.png") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*min-height: 50%;*/
+
+    width:91.5%;
+    min-height: 400px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    background:grey;
+}
